@@ -24,27 +24,28 @@
 
         <form>
             <h3>Parametry testu a populace</h3>
-            <div><label for="sensitivity">Sensitivita testů:</label> <input id="sensitivity" type="number" min="0" max="100" step="0.5" value="70.0" />%</div>
-            <div><label for="specificity">Specificita testů:</label> <input id="specificity" type="number" min="0" max="100" step="0.5" value="99.5" />%</div>
-            <div><label for="populace">Velikost testované populace:</label> <input id="populace" type="number" value="100000" /></div>
+            <div><label for="sensitivity">Sensitivita testů: </label> <input id="sensitivity" type="number" min="0" max="100" step="0.5" value="70.0" />% <i><small>(Pravděpodobnost, že odhalí nakaženého.)</small></i></div>
+            <div><label for="specificity">Specificita testů:</label> <input id="specificity" type="number" min="0" max="100" step="0.5" value="99.5" />% <i><small>(Pravděpodobnost, že o zdravém řekne, že je zdravý.)</small></i></div>
+            <div><label for="populace">Kolik lidí testujete: </label> <input id="populace" type="number" value="100000" /></div>
             <br>
             <h3>Stav pandemie</h3>
-            <div><label for="prevelance">Procento aktuálně nakažených v populaci:</label> <input id="prevelance" type="number" min="0" max="100" step="0.5" value="0.5" />%<span style="visibility: hidden;"> OR <label for="positive_percent">% positive in population:</label> <input id="positive_percent" type="number" min="0" max="100" step="0.5" value="0.5" />%</span></div>
+            <div><label for="prevelance">Procento aktuálně nakažených v populaci: </label> <input id="prevelance" type="number" min="0" max="100" step="0.5" value="0.5" />%<span style="visibility: hidden;"> OR <label for="positive_percent">% positive in population:</label> <input id="positive_percent" type="number" min="0" max="100" step="0.5" value="0.5" />%</span></div>
 
             <br>
             <h3>Pravděpodobnost při konfirmaci PCR</h3>
-            <div><span class="explain_output">V případě, že je test pozitivní, tak je pravděpodobnost toho, že dotyčný nakažený: </span> <input type="text" readonly="true" id="positive_likelihood" />%</div>
-            <div class="output"><span class="explain_output">V případě, že je test negativní, tak je pravděpodobnost toho, že dotyčný nakažený:</b></span> <input type="text" readonly="true" id="negative_likelihood" />%</div>
+            <div><span class="explain_output">V rámci pozitivních testů je skutečně nakažených: : </span> <input type="text" readonly="true" id="positive_likelihood" />%</div>
+            <div class="output" style="visibility: hidden;"><span class="explain_output">V případě, že je test negativní, tak je pravděpodobnost toho, že dotyčný nakažený:</b></span> <input type="text" readonly="true" id="negative_likelihood" />%</div>
             <br>
 
             <h3>Výsledky testu</h3>
             <h5>Pozitivní výsledky testů</h5>
-            <div><input type="text" readonly="true" id="true_positive" />% nemocných bude mít správně pozitivní výsledek testu. Celkem to bude: <input type="text" readonly="true" id="true_positive_abs" /> lidí.</div>
-            <div><input type="text" readonly="true" id="false_positive" />% zdravých lidí dostane falešně pozitivní výsledek test. Celkem to bude: <input type="text" readonly="true" id="false_positive_abs" /> lidí.</div>
+            <div><input type="text" readonly="true" id="true_positive" />% lidí dostane správně pozitivní výsledek testu. Tedy <input type="text" readonly="true" id="true_positive_abs" /> z vámi testovaných
+lidí.</div>
+            <div><input type="text" readonly="true" id="false_positive" />% lidí dostane falešně pozitivní výsledek testu. Tedy<input type="text" readonly="true" id="false_positive_abs" /> z vámi testovaných lidí.</div>
             <br>
             <h5>Negativní výsledky testů</h5>
-            <div><input type="text" readonly="true" id="true_nagative" />% zdravých lidí dostane spravně negativní výsledek testu. Celkem to bude: <input type="text" readonly="true" id="true_nagative_abs" /> lidí.</div>
-            <div><input type="text" readonly="true" id="false_nagative" />% nemocných lidi dostaně falšně negativní test. Celkem to bude <input type="text" readonly="true" id="false_nagative_abs" /> lidí.</div>
+            <div><input type="text" readonly="true" id="true_nagative" />% lidí dostane správně negativní výsledek testu.. Tedy  <input type="text" readonly="true" id="true_nagative_abs" /> z vámi testovaných.</div>
+            <div><input type="text" readonly="true" id="false_nagative" />%  lidi dostaně falešně negativní test. Tedy <input type="text" readonly="true" id="false_nagative_abs" /> z vámi testovaných.</div>
  
         </form>
 
