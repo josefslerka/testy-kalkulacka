@@ -95,6 +95,7 @@
 
     document.addEventListener("DOMContentLoaded", () => {
         $("sensitivity").addEventListener("change", updateState);
+        $("populace").addEventListener("change", updateState);
         $("specificity").addEventListener("change", updateState);
         $("prevelance").addEventListener("change", () => {
             lockPrevelance = true;
