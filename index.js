@@ -28,6 +28,9 @@
         let specificity = $("specificity").valueAsNumber / 100.0;
         let prevelance = getPrevelance(specificity, sensitivity);
 
+        let populace = $("populace").valueAsNumber;
+
+
         let true_positive_rate = sensitivity * prevelance;
         let true_negative_rate = specificity * (1.0 - prevelance);
 
@@ -39,6 +42,17 @@
 
         $("positive_likelihood").value = (probability_given_positive * 100).toFixed(2).toString();
         $("negative_likelihood").value = (probability_given_negative * 100).toFixed(2).toString();
+
+        $("false_positive").value = (false_positive_rate * 100).toFixed(2).toString();
+        $("true_nagative").value = (true_negative_rate * 100).toFixed(2).toString();
+        $("false_nagative").value = (false_negative_rate * 100).toFixed(2).toString();
+        $("true_positive").value = (true_positive_rate * 100).toFixed(2).toString();
+
+        $("false_positive_abs").value = Math.round(populace * false_positive_rate).toString();
+        $("true_nagative_abs").value = Math.round(populace * true_negative_rate).toFixed(0).toString();
+        $("false_nagative_abs").value = Math.round(populace * false_negative_rate).toFixed(0).toString();
+        $("true_positive_abs").value = Math.round(populace * true_positive_rate).toFixed(0).toString();
+
 
         if (lockPrevelance) {
             let positive_tests = true_positive_rate + false_positive_rate;
